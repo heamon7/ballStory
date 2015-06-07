@@ -1,0 +1,29 @@
+[
+
+    {
+        "name": "Player",
+        "type": "sync",
+        "x": "50",
+        "y": "50",
+        "normal-pic": "/character/pyr_left.png",
+        "jump-pic":  "/character/pyr_left.png",
+        "left-pic": "/character/pyr_left.png",
+        "right-pic":  "/character/pyr_left.png",
+        "smile-pic": "/character/pyr_left.png",
+        "onSmile": "smile()",
+        "isCollider": "false",
+        "isEndTrigger": "false"
+
+
+    },
+    {
+        "name": "Follower_1",
+        "type": "NPC",
+        "x": "10",
+        "y": "70",
+        "normal-pic": "/character/pyr_left.png"
+    }
+
+
+]
+

@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0027)http://123.57.222.133:3000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Express</title>
+    <link rel="stylesheet" href="http://123.57.222.133:3000/stylesheets/style.css">
+
+      <style>
+          #game_div, p {
+              width: 400px;
+              margin: auto;
+              margin-top: 20px;
+          }
+      </style>
+   
+  <style>.photobooth{position:relative;font:11px arial,sans-serif;overflow:hidden;user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.photobooth canvas{position:absolute;left:0;top:0}.photobooth .blind{position:absolute;left:0;top:0;opacity:0;width:100%;height:100%;background:#fff;z-index:1}.photobooth .blind.anim{transition:opacity 1500ms ease-out;-o-transition:opacity 1500ms ease-out;-moz-transition:opacity 1500ms ease-out;-webkit-transition:opacity 1500ms ease-out}.photobooth .warning{position:absolute;top:45%;background:#ffebeb;color:#cf0000;border:1px solid #cf0000;width:60%;left:50%;margin-left:-30%;display:none;padding:5px;z-index:10;text-align:center}.photobooth .warning span{text-decoration:underline;cursor:pointer;color:#333}.photobooth ul{width:30px;position:absolute;right:0;top:0;background:rgba( 0,0,0,.6 );height:190px;z-index:2;border-bottom-left-radius:5px}.photobooth ul li{width:30px;height:38px;background-repeat:no-repeat;background-position:center center;cursor:pointer;position:relative}.photobooth ul li:hover{background-color:#aaa}.photobooth ul li.selected{background-color:#ccc}.photobooth ul.noHSB{height:80px}.photobooth ul.noHSB li.hue,.photobooth ul.noHSB li.saturation,.photobooth ul.noHSB li.brightness{display:none}.photobooth ul li.hue{background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAZAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgACAAYAwERAAIRAQMRAf/EAHgAAQEAAAAAAAAAAAAAAAAAAAkIAQEAAwAAAAAAAAAAAAAAAAAKBggLEAAAAwQLAAAAAAAAAAAAAAAAMQZBAjQ4A3MEdMQFdQcICTkRAAEBBAcGBwAAAAAAAAAAABExAAEhElECMjMEBQlhwgNzFDgVNRY3CBgK/9oADAMBAAIRAxEAPwBGOKPmqmNdT5FD2YgarLO67OVueIqrxF2tI/1Kn0jjjKfFcJZEt+5BAUCAaKuw+ThT3vC0wbFof+U4Dnv3WGl8Pu47A8vecwabKy8ZRVNKFdF3dY72fztbVdFu67axelcfrPkYlPTutCW7qqYCkwDf/9k=)}.photobooth ul li.saturation{background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAZAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgACAAYAwERAAIRAQMRAf/EAGMAAAMAAAAAAAAAAAAAAAAAAAYICQEBAQEAAAAAAAAAAAAAAAAACAkKEAAABgMBAAAAAAAAAAAAAAAAwYIDMwZxAkQHEQABAgUFAAAAAAAAAAAAAAAAAQYxgQIyM3HBQgMH/9oADAMBAAIRAxEAPwAwo0rWdSFXHBYpnLZmWjVB/fLedIODu5Do81j1y2KE0CJlJA2uK5ZjtY2Kg//Z)}.photobooth ul li.brightness{background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAZAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgACAAYAwERAAIRAQMRAf/EAFcAAQAAAAAAAAAAAAAAAAAAAAoBAQAAAAAAAAAAAAAAAAAAAAAQAAAEBQUAAAAAAAAAAAAAAACxAwgBMXECBXJzBDQ1EQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwAcTWfR4GtIwC5mITxNUDgAYA0joY3aRKwB/9k=)}.photobooth ul li.crop{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAICAYAAADjoT9jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEFJREFUeNpi/A8EDAjACMT/qUgzMCJZwMhAXQA2l4VGhsPNZKKR4XBfMMG8QiPASDcf0MIX/2FxgCJARRoMAAIMAK49Iv4yTUj5AAAAAElFTkSuQmCC)}.photobooth ul li.trigger{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAASCAYAAABB7B6eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAa9JREFUeNqc1M8rRFEUwPF5M4MhP8aPIiIS21lQk1Is5ceChZIdOytlI/+A7Ig/gGRhpYiNbKQsrBRFLPzYWJghNH7MjOd76qhr8m6vOfWpmffevefec987juu6AZ8RQhhBpJHJuT+CfsiEDo6wGjYeKMKn8b8Um/jCG2qQ0skjyOIWB9hFNyaN8bWSwGEHM5q9EVc6mUQ9YpjDHQbwoQkjuspDDKNEF9hjJDjFcoAEx653XEoJMYoVxNGBGPZRhzbL+HTYWLEtpO6V6EQ5kijTc7HFiwyssDwgyXsxhW8tkZSxAAksoj3n7P4G20hatviKE3RpqXKN4V5K4TE+IQ89WBI8ao0DFkP49krw+057xbyWxBY72LIdXsbjnlzf8/kRbtgSeO1APqonnwlu8tlBIYp9JojmkyCiX7Kf6MsngcSsvvO2aMZEPmcgEcea7ua/aNKGaC2RY0lwgTNsYwwNOlkrprGOJe2q/84vvegabdrrQyqomrSTyirHtbPKc+84x4L2qBazORi/s9KuC7QfBY3JC1UVBlGt16PallPap+Tas+7wWc8za1Ql8yPAAAzkXGo1lmDtAAAAAElFTkSuQmCC)}.photobooth .submenu{background:rgba( 0,0,0,.6 );position:absolute;width:100px;opacity:0;height:20px;padding:5px 10px;color:#fff;top:4px;left:-124px;border-radius:5px;-webkit-transition:opacity 500ms ease;-moz-transition:opacity 500ms ease;-o-transition:opacity 500ms ease;-msie-transition:opacity 500ms ease;transition:opacity 500ms ease}.photobooth li:hover .submenu{opacity:1}.photobooth .submenu .tip{width:4px;height:8px;position:absolute;right:-4px;top:50%;margin-top:-2px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAICAYAAADeM14FAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADVJREFUeNpiYGBgmAnEDP///wdjJgYImMnIyAhmwATggowwLTCArAKrQDqyQDrcMGQlAAEGAAGOCdflbyWyAAAAAElFTkSuQmCC)}.photobooth .submenu .slider{width:100px;height:20px;position:relative}.photobooth .submenu .slider .track{height:2px;width:100px;position:absolute;top:9px;background:rgba(255,255,255,.6)}.photobooth .submenu .slider .handle{height:14px;width:2px;position:absolute;top:3;background:#fff;z-index:2}.photobooth .submenu .slider .handle div{position:absolute;z-index:3;width:20px;top:-3px;height:20px;cursor:w-resize;left:-9px}.resizehandle{position:absolute;z-index:1;width:100px;height:100px;left:30px;top:30px;cursor:move;outline:1500px solid rgba( 0,0,0,.35 );box-shadow:2px 2px 10px rgba(0,0,0,.5),0 0 3px #000;opacity:0;transition:opacity 500ms ease;-moz-transition:opacity 500ms ease;-o-transition:opacity 500ms ease;-webkit-transition:opacity 500ms ease}noindex:-o-prefocus,.resizehandle{outline:0!important}@-moz-document url-prefix(){.resizehandle{ box-shadow:none!important}}.resizehandle .handle{width:100%;height:100%;border:2px dashed #0da4d3;margin:-2px 0 0 -2px;z-index:3;position:relative}.resizehandle .handle div{width:18px;height:18px;position:absolute;right:-2px;bottom:-2px;z-index:4;cursor:se-resize;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHdJREFUeNpi/P//PwO5gIlcjXxLr/xnIlujsg7pNsM0AgEjE7kaSfIzusZ/d4n0M1aNxPgZWeMHC4RGIJuREV8847IRpBGvnwlpxBnPRGkEyYOcjYx5l1z+z3/8Pwij8NHlQWwUPxNrI4afSdUI9zNZGoF8gAADAOGvmx/e+CgVAAAAAElFTkSuQmCC);background-position:top left;background-repeat:no-repeat}</style></head>
+  
+
+  <body>
+  <div>
+      <div id="example" style="width: 470px; height: 300px;"><div class="photobooth" style="width: 470px; height: 300px;"><div class="blind anim" style="opacity: 0;"></div><canvas width="470" height="300"></canvas><div class="warning notSupported">Sorry, Photobooth.js is not supported by your browser</div><div class="warning noWebcam" style="display: none;">Please give Photobooth permission to use your Webcam. <span>Try again</span></div><ul><li title="hue" class="hue"><div class="submenu"><div class="tip"></div><div class="slider"><div class="track"></div><div class="handle" style="left:50px"><div></div></div></div></div></li><li title="saturation" class="saturation"><div class="submenu"><div class="tip"></div><div class="slider"><div class="track"></div><div class="handle" style="left:50px"><div></div></div></div></div></li><li title="brightness" class="brightness"><div class="submenu"><div class="tip"></div><div class="slider"><div class="track"></div><div class="handle" style="left:50px"><div></div></div></div></div></li><li title="crop" class="crop"></li><li title="take picture" class="trigger"></li></ul><div class="resizehandle"><div class="handle"><div></div></div></div></div></div>
+
+      <div style="width: 470px; height: 30px;"><form>
+              <input type="button" onclick="" value="Slowly Press Me Two Times ">
+
+          </form>
+      </div>
+      <div id="game_div" style="overflow: hidden;"> <canvas width="400" height="490" style="display: block; touch-action: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div>
+
+  </div>
+
+
+    <pre id="response">Loading...</pre>
+  <!--script src="https://cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script-->
+  <script type="text/javascript" src="./Express_files/av-mini-0.5.4.js"></script>
+    <script type="text/javascript" src="./Express_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Express_files/facepp-sdk.min.js"></script>
+    <script type="text/javascript" src="./Express_files/photobooth_min.js"></script>
+  <script type="text/javascript" src="./Express_files/base64.js"></script>
+  <script type="text/javascript" src="./Express_files/phaser.min.js"></script>
+    <script type="text/javascript">
+        AV.initialize("0wuecmgwc7sg9r1np1eux3yya7lq4k7qenlpmp0qnmsnx3jm", "e65f7h0t6atg0vx1sv2pzpfz671s9ldy0r44w2ig2dgc7ir1");
+        container = document.getElementById( "example" );
+        myPhotobooth = new Photobooth( container );
+
+        // Initialize Phaser, and creates a 400x490px game
+        var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
+
+        // Creates a new 'main' state that will contain the game
+        var main_state = {
+
+            // Function called first to load all the assets
+            preload: function() {
+                // Change the background color of the game
+                this.game.stage.backgroundColor = '#71c5cf';
+
+                // Load the bird sprite
+                this.game.load.image('bird', '/assets/bird.png');
+
+                // Load the pipe sprite
+                this.game.load.image('pipe', '/assets/pipe.png');
+            },
+
+            // Fuction called after 'preload' to setup the game
+            create: function() {
+                // Display the bird on the screen
+
+
+                this.bird = this.game.add.sprite(100, 245, 'bird');
+                this.bird.events.updatePosition = new Phaser.Signal()
+
+                this.bird.events.updatePosition.add(this.movePosition,this)
+
+                // Add gravity to the bird to make it fall
+                this.bird.body.gravity.y = 0;
+
+                // Call the 'jump' function when the spacekey is hit
+                var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                space_key.onDown.add(this.jump, this);
+
+                // Create a group of 20 pipes
+                this.pipes = game.add.group();
+                this.pipes.createMultiple(20, 'pipe');
+
+                // Timer that calls 'add_row_of_pipes' ever 1.5 seconds
+//                this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);
+                this.timer = this.game.time.events.loop(500, this.refreshFace, this);
+
+                this.faceData=''
+                // Add a score label on the top left of the screen
+//                this.score = 0;
+//                var style = { font: "30px Arial", fill: "#ffffff" };
+//                this.label_score = this.game.add.text(20, 20, "0", style);
+            },
+
+            // This function is called 60 times per second
+            update: function() {
+                // If the bird is out of the world (too high or too low), call the 'restart_game' function
+                if (this.bird.inWorld == false)
+                    this.restart_game();
+
+                // If the bird overlap any pipes, call 'restart_game'
+//                this.game.physics.overlap(this.bird, this.pipes, this.restart_game, null, this);
+            },
+
+
+
+            movePosition: function(faceData) {
+                // Add a vertical velocity to the bird
+//                console.log(faceData)
+//                faceData = JSON.stringify(faceData)
+
+                if (faceData.face.length==0){
+
+                }
+
+                else if(faceData.face.length==1){
+                        centerx = faceData.face[0].position.center.x
+                        centery = faceData.face[0].position.center.y
+                        console.log(centerx)
+                        this.bird.reset(centerx,centery)
+                    }
+
+                //this.bird.body.velocity.y = -350;
+
+            },
+
+            refreshFace: function() {
+                $('.trigger').click()
+                that = this
+                myPhotobooth.onImage = function( dataUrl ) {
+                    var dataString = dataUrl.split(",")[1];
+                    var extension = dataUrl.match(/\/(.*)\;/)[1];
+                    var avFile = new AV.File("image." + extension, {base64: dataString});
+
+                    avFile.save().then(function () {
+                        imgUrl = avFile.url()
+                        console.log(imgUrl)
+                        var api = new FacePP('03185d23e0c06c266049f9c6c024dd6a', 'tkDEWxFl7jl9v0ky6g3m2OtGn5KFG0Az');
+                        api.request('detection/detect', {
+                            url: imgUrl
+                        }, function (err, result) {
+                            if (err) {
+                                // TODO handle error
+                            }
+                            // TODO use result
+                            document.getElementById('response').innerHTML = JSON.stringify(result);
+//                            t=setTimeout("facepp()",1000)
+                            that.bird.events.updatePosition.dispatch(result)
+                        });
+                    }, function (error) {
+                        // The file either could not be read, or could not be saved to AV.
+                    });
+                }
+
+            },
+
+
+            // Make the bird jump
+            jump: function() {
+                // Add a vertical velocity to the bird
+                this.bird.body.velocity.y = -350;
+            },
+
+            // Restart the game
+            restart_game: function() {
+                // Remove the timer
+                this.game.time.events.remove(this.timer);
+
+                // Start the 'main' state, which restarts the game
+                this.game.state.start('main');
+            },
+
+            // Add a pipe on the screen
+            add_one_pipe: function(x, y) {
+                // Get the first dead pipe of our group
+                var pipe = this.pipes.getFirstDead();
+
+                // Set the new position of the pipe
+                pipe.reset(x, y);
+
+                // Add velocity to the pipe to make it move left
+                pipe.body.velocity.x = -200;
+
+                // Kill the pipe when it's no longer visible
+                pipe.outOfBoundsKill = true;
+            },
+
+            // Add a row of 6 pipes with a hole somewhere in the middle
+            add_row_of_pipes: function() {
+                var hole = Math.floor(Math.random()*5)+1;
+
+                for (var i = 0; i < 8; i++)
+                    if (i != hole && i != hole +1)
+                        this.add_one_pipe(400, i*60+10);
+
+                this.score += 1;
+                this.label_score.content = this.score;
+            },
+        };
+
+        // Add and start the 'main' state to start the game
+        game.state.add('main', main_state);
+        game.state.start('main');
+
+
+
+
+    </script>
+  
+
+</body></html>

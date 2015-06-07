@@ -1,0 +1,56 @@
+﻿.main {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-size: auto 100%;
+    background-position-x: 0;
+}
+
+#mainB {
+    z-index: -100;
+    background-color: black;
+
+}
+#mainF {
+    z-index: 100;
+}
+.LineV {
+    height: 5px;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(255, 0, 0, 0.42);
+    z-index: 1000;
+}
+
+.LineH {
+    height: 100%;
+    width: 5px;
+    position: fixed;
+    background-color: rgba(255, 0, 0, 0.42);
+    z-index: 1000;
+}
+.Word {
+    color: white;
+    text-shadow:black 1px 1px 0;
+}
+
+span,div,body,p,h1,h2,h3,a{
+    font-family: "微软雅黑","黑体";
+}
+#msg {
+    width: 100%;
+    height: auto;
+    top: 85%;
+
+    position: fixed;
+    text-align: center;
+    font-size: 32px;
+
+}
+.spirit {
+    
+    position: fixed;
+    z-index: 0;
+
+}

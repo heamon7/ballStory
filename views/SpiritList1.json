@@ -1,0 +1,197 @@
+[
+
+    {
+        "name": "Player",
+        "type": "sync",
+        "x": "50",
+        "y": "50",
+        "normal-pic": "/character/pyr_normal.png",
+        "jump-pic":   "/character/pyr_normal.png",
+        "left-pic": "/character/pyr_left.png",
+        "right-pic":  "/character/pyr_right.png",
+        "smile-pic": "/character/pyr_magic.png",
+        "isCollider": "true",
+        "useGravity": "true"
+
+    },
+    {
+        "name": "flower1",
+        "type": "NPC",
+        "x": "17",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(1);"
+    },
+    {
+        "name": "flower2",
+        "type": "NPC",
+        "x": "26",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(2);"
+
+
+    },
+    {
+        "name": "flower3",
+        "type": "NPC",
+        "x": "27",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(3);"
+
+
+    },
+    {
+        "name": "flower4",
+        "type": "NPC",
+        "x": "33",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(4);"
+
+
+    },
+    {
+        "name": "flower5",
+        "type": "NPC",
+        "x": "42",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(5);"
+
+
+    },
+    {
+        "name": "flower6",
+        "type": "NPC",
+        "x": "43",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(6);"
+
+
+    },
+    {
+        "name": "flower7",
+        "type": "NPC",
+        "x": "49",
+        "y": "79",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(7);"
+
+
+    },
+    {
+        "name": "flower8",
+        "type": "NPC",
+        "x": "50",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(8);"
+
+
+    },
+    {
+        "name": "flower9",
+        "type": "NPC",
+        "x": "66",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(9);"
+
+
+    },
+    {
+        "name": "flower10",
+        "type": "NPC",
+        "x": "70",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(10);"
+
+
+    },
+    {
+        "name": "flower11",
+        "type": "NPC",
+        "x": "80",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(11);"
+
+
+    },
+    {
+        "name": "flower12",
+        "type": "NPC",
+        "x": "88",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(12);"
+
+
+    },
+    {
+        "name": "flower13",
+        "type": "NPC",
+        "x": "89",
+        "y": "75",
+        "normal-pic": "/character/flower.png",
+        "smile-pic": "/character/flower_open.png",
+        "isCollider": "true",
+        "useGravity": "false",
+        "onTriggerEnter": "onFlowerTrigger(13);"
+
+
+    },
+    {
+        "name": "TerrainCollider",
+        "type": "sync",
+        "x": "0",
+        "y": "90",
+        "normal-pic": "/map/mapColliderEmpty.png",
+        "isCollider": "true",
+        "isEndTrigger": "false",
+        "useGravity": "false"
+
+    }
+
+]
+
