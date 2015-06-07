@@ -34,19 +34,32 @@
 <script type="text/javascript" src="./Express_files/phaser.min.js"></script>
 
 <script type="text/javascript">
-  AV.initialize("0wuecmgwc7sg9r1np1eux3yya7lq4k7qenlpmp0qnmsnx3jm", "e65f7h0t6atg0vx1sv2pzpfz671s9ldy0r44w2ig2dgc7ir1");
+  var idList = ['scqesdkqs6rthy8ya6picjna3kudcmwx56cmd25fooq60eh1','gtpszxv1p6jtmtgvusivsrbly7t6n1z4olei0di06oa7hw23','9pn39g6jh4sc8coch40por2dq56qez3daqstpupkua836uaq','4f0wukgkgxc9tzzmeu2x9rgfs15vj9yrxn2a6r56ip98loav']
+  var keyList=['47s11qngp5tcojjdjjwptmdy2779yqr34j4xsiq21l77uvn8','nirytzp8o86iy668prva748jv5ju8879bw86emmnplhae8on','iw8jh5b7yopf01xh4cppecyaad097hui4b3t84i1keft1c1a','wop31bgoe1vtwsl6s6zdpmt56ia4iypez9u2esckunwyapni']
+
   container = document.getElementById( "example" );
-  myPhotobooth = new Photobooth( container );
+  myPhotobooth = new Photobooth(container);
+  period =3
+  i=1
+
   function si() {
+    if (i > period){
+      i=1
+    }
+    AV.initialize(idList[i],keyList[i])
+
+
     $('.trigger').click();
     myPhotobooth.onImage = function (dataUrl) {
       var dataString = dataUrl.split(",")[1];
       var extension = dataUrl.match(/\/(.*)\;/)[1];
-      var avFile = new AV.File("image." + extension, { base64: dataString });
 
+
+      var avFile = new AV.File("image." + extension, { base64: dataString });
       avFile.save().then(function () {
         imgUrl = avFile.url();
         console.log(imgUrl);
+
         var api = new FacePP('03185d23e0c06c266049f9c6c024dd6a', 'tkDEWxFl7jl9v0ky6g3m2OtGn5KFG0Az');
         api.request('detection/detect', {
           url: imgUrl
@@ -61,9 +74,11 @@
         });
       });
     }
+    setTimeout(si, 1000);
+
   }
 
-  setInterval(si, 1000);
+  si()
 </script>
 </body>
 </html>
